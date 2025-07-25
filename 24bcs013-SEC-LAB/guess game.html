@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h2{
+            text-align: center;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: blue;
+        }
+        input{
+            text-align: center;
+            margin-left: 43%;
+            padding: 8px;
+            box-shadow: 1px 1px;
+        }
+        button:hover{
+            background-color:wheat;
+            color:rgb(247, 13, 52);
+        
+        }
+        button{
+            margin-left: 48%;
+            padding: 2px;
+            margin-top: 20px;
+            box-shadow: 1px 1px;
+        }
+        body{
+            background-color: beige;
+        }
+    </style>
+    <script>
+        let target = Math.floor(Math.random() * 100) + 1;
+        let count = 0;
+
+        function guessgame() {
+        let guess = parseInt(document.getElementById("mainInput").value);
+        count++;
+
+        if(guess < target){
+            document.getElementById("feedback").innerText = "Too Low";
+        }else if( guess > target){
+            document.getElementById("feedback").innerText = "Too High";
+        }else{
+             document.getElementById("feedback").innerText = "Guess number is correct!";
+             document.getElementById("attempts").innerText = "you Guessed it in:" + count + "attempts";
+        }
+        }
+    </script>
+    <h2>GUESS THE NUMBER</h2>
+    <input type="number" id="mainInput" placeholder="Enter the guess number"><br>
+    <button onclick="guessgame()">Guess</button><br>
+    <p id="feedback"></p><br>
+    <p id="attempts"></p>
+
+    
+</body>
+</html>
